@@ -1,6 +1,7 @@
 
 package it.sirfin.archivioclienti.serice;
 
+import it.sirfin.archivioclienti.dto.CriterioRicercaDto;
 import it.sirfin.archivioclienti.dto.ListaClientiDto;
 import it.sirfin.archivioclienti.model.Cliente;
 
@@ -11,4 +12,6 @@ public interface ArchivioClientiService {
     ListaClientiDto aggiorna();
     
     ListaClientiDto cancellaCliente(Cliente cliente);
+    
+    ListaClientiDto ricerca(String criterioRicerca);
 }

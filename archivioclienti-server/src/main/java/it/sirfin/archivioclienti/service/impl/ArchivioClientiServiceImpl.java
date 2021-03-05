@@ -23,9 +23,9 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
 
     @Override
     public ListaClientiDto aggiorna() {
-      List<Cliente> lista = archivioClientiRepository.findAll();
-      return new ListaClientiDto(lista);
-             
+        List<Cliente> lista = archivioClientiRepository.findAll();
+        return new ListaClientiDto(lista);
+
     }
 
     @Override
@@ -33,8 +33,16 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
         archivioClientiRepository.delete(cliente);
         return aggiorna();
     }
-    
-    
 
-    
+    @Override
+    public ListaClientiDto ricerca(String criterioRicerca) {
+        ListaClientiDto listaFiltDto = new ListaClientiDto(
+                archivioClientiRepository
+                        .findByCodiceContainsOrIndirizzoContainsOrRagioneSocialeContains(
+                                criterioRicerca, criterioRicerca, criterioRicerca
+                        )
+        );
+        return listaFiltDto;
+    }
+
 }

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Cliente } from './cliente';
 import { ClienteDto } from './cliente-dto';
+import { CriterioRicercaDto } from './criterio-ricerca-dto';
 import { ListaClientiDto } from './lista-clienti-dto';
 
 @Component({
@@ -21,21 +22,26 @@ export class AppComponent {
     let dto = new ClienteDto();
     dto.cliente = this.cliente;
     let ox = this.http.post<ListaClientiDto>("http://localhost:8080/inserisci", dto);
-    ox.subscribe(  r =>
+    ox.subscribe(r =>
       this.clienti = r.clienti);
-      this.cliente = new Cliente();
+    this.cliente = new Cliente();
   }
 
-  elimina(c:Cliente) { 
+  elimina(c: Cliente) {
     let dto = new ClienteDto();
     dto.cliente = c;
     let ox = this.http.post<ListaClientiDto>("http://localhost:8080/elimina-cliente", dto);
-    ox.subscribe(  r =>
+    ox.subscribe(r =>
       this.clienti = r.clienti);
-      
+
   }
 
-  search() { }
+  search() {
+    let critRicDto = new CriterioRicercaDto();
+    critRicDto.string = this.criterioRicerca;
+    this.http.post<ListaClientiDto>("http://localhost:8080/ricerca", critRicDto)
+      .subscribe(r => this.clienti = r.clienti);
+  }
 
   seleziona() { }
 

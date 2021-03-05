@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "archivio-clienti-client-his"
+  "defaultProject": "archivio-clienti-client-his",
+  "cli": {
+    "analytics": false
+  }
 }

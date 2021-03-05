@@ -2,6 +2,7 @@
 package it.sirfin.archivioclienti.controller;
 
 import it.sirfin.archivioclienti.dto.ClienteDto;
+import it.sirfin.archivioclienti.dto.CriterioRicercaDto;
 import it.sirfin.archivioclienti.dto.ListaClientiDto;
 import it.sirfin.archivioclienti.serice.ArchivioClientiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,12 @@ public class ArchivioClientiController {
     @ResponseBody
     public ListaClientiDto eliminaCliente(@RequestBody ClienteDto clientDto){
         return archivioClientiService.cancellaCliente(clientDto.getCliente());
+    }
+    
+    @RequestMapping("/ricerca")
+    @ResponseBody
+    public ListaClientiDto ricerca(@RequestBody CriterioRicercaDto c){
+        return archivioClientiService.ricerca(c.getString());
     }
     
 }

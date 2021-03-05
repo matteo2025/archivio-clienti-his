@@ -23,4 +23,11 @@ public class ArchivioClientiController {
     public ListaClientiDto inserisci(@RequestBody ClienteDto clientDto){
         return archivioClientiService.inserisciContatto(clientDto.getCliente());
     }
+    
+    @RequestMapping("/elimina-cliente")
+    @ResponseBody
+    public ListaClientiDto eliminaCliente(@RequestBody ClienteDto clientDto){
+        return archivioClientiService.cancellaCliente(clientDto.getCliente());
+    }
+    
 }

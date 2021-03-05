@@ -27,6 +27,12 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
       return new ListaClientiDto(lista);
              
     }
+
+    @Override
+    public ListaClientiDto cancellaCliente(Cliente cliente) {
+        archivioClientiRepository.delete(cliente);
+        return aggiorna();
+    }
     
     
 

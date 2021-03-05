@@ -26,7 +26,14 @@ export class AppComponent {
       this.cliente = new Cliente();
   }
 
-  elimina() { }
+  elimina(c:Cliente) { 
+    let dto = new ClienteDto();
+    dto.cliente = c;
+    let ox = this.http.post<ListaClientiDto>("http://localhost:8080/elimina-cliente", dto);
+    ox.subscribe(  r =>
+      this.clienti = r.clienti);
+      
+  }
 
   search() { }
 

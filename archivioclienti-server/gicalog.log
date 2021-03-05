@@ -675,3 +675,68 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2021-03-05 16:21:01.732 TRACE 16076 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [efefwef]
 2021-03-05 16:21:01.732 TRACE 16076 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [4]
 2021-03-05 16:21:01.896 DEBUG 16076 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:30:28.861 DEBUG 3024 --- [main] org.hibernate.SQL                        : create table cliente (id bigint not null, codice varchar(255), indirizzo varchar(255), ragione_sociale varchar(255), primary key (id)) engine=InnoDB
+2021-03-05 16:30:29.565 DEBUG 3024 --- [main] org.hibernate.SQL                        : create table hibernate_sequence (next_val bigint) engine=InnoDB
+2021-03-05 16:30:29.891 DEBUG 3024 --- [main] org.hibernate.SQL                        : insert into hibernate_sequence values ( 1 )
+2021-03-05 16:30:31.028  WARN 3024 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 16:31:46.633 DEBUG 3024 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-05 16:31:46.668 DEBUG 3024 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-05 16:31:46.757 DEBUG 3024 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into cliente (codice, indirizzo, ragione_sociale, id) values (?, ?, ?, ?)
+2021-03-05 16:31:46.761 TRACE 3024 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [1]
+2021-03-05 16:31:46.762 TRACE 3024 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [fsdf]
+2021-03-05 16:31:46.763 TRACE 3024 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [dfsd]
+2021-03-05 16:31:46.764 TRACE 3024 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [1]
+2021-03-05 16:31:46.915 DEBUG 3024 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:31:53.379 DEBUG 3024 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-05 16:31:53.380 DEBUG 3024 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-05 16:31:53.409 DEBUG 3024 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into cliente (codice, indirizzo, ragione_sociale, id) values (?, ?, ?, ?)
+2021-03-05 16:31:53.410 TRACE 3024 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2]
+2021-03-05 16:31:53.411 TRACE 3024 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [sdfsd]
+2021-03-05 16:31:53.411 TRACE 3024 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [dfsd]
+2021-03-05 16:31:53.412 TRACE 3024 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [2]
+2021-03-05 16:31:53.469 DEBUG 3024 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:31:57.211 DEBUG 3024 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-05 16:31:57.213 DEBUG 3024 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-05 16:31:57.250 DEBUG 3024 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : insert into cliente (codice, indirizzo, ragione_sociale, id) values (?, ?, ?, ?)
+2021-03-05 16:31:57.251 TRACE 3024 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [3]
+2021-03-05 16:31:57.252 TRACE 3024 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [sdf]
+2021-03-05 16:31:57.252 TRACE 3024 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [fdsgsf]
+2021-03-05 16:31:57.253 TRACE 3024 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [3]
+2021-03-05 16:31:57.285 DEBUG 3024 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:31:59.600 DEBUG 3024 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:32:01.739 DEBUG 3024 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:32:02.282 DEBUG 3024 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:32:02.561 DEBUG 3024 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:32:02.691 DEBUG 3024 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:32:03.243 DEBUG 3024 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:32:05.610 DEBUG 3024 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:32:44.318 DEBUG 3024 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:39:59.832  WARN 17012 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 16:40:26.442 DEBUG 17012 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-03-05 16:40:26.459 DEBUG 17012 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-03-05 16:40:26.525 DEBUG 17012 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into cliente (codice, indirizzo, ragione_sociale, id) values (?, ?, ?, ?)
+2021-03-05 16:40:26.528 TRACE 17012 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [65]
+2021-03-05 16:40:26.528 TRACE 17012 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [sdfg]
+2021-03-05 16:40:26.529 TRACE 17012 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [afgsdfg]
+2021-03-05 16:40:26.530 TRACE 17012 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [4]
+2021-03-05 16:40:26.701 DEBUG 17012 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:40:28.799 DEBUG 17012 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select cliente0_.id as id1_0_0_, cliente0_.codice as codice2_0_0_, cliente0_.indirizzo as indirizz3_0_0_, cliente0_.ragione_sociale as ragione_4_0_0_ from cliente cliente0_ where cliente0_.id=?
+2021-03-05 16:40:28.799 TRACE 17012 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2021-03-05 16:40:28.810 DEBUG 17012 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : delete from cliente where id=?
+2021-03-05 16:40:28.811 TRACE 17012 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2021-03-05 16:40:28.888 DEBUG 17012 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:40:30.100 DEBUG 17012 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select cliente0_.id as id1_0_0_, cliente0_.codice as codice2_0_0_, cliente0_.indirizzo as indirizz3_0_0_, cliente0_.ragione_sociale as ragione_4_0_0_ from cliente cliente0_ where cliente0_.id=?
+2021-03-05 16:40:30.100 TRACE 17012 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2021-03-05 16:40:30.102 DEBUG 17012 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : delete from cliente where id=?
+2021-03-05 16:40:30.104 TRACE 17012 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [4]
+2021-03-05 16:40:30.138 DEBUG 17012 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:40:31.152 DEBUG 17012 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select cliente0_.id as id1_0_0_, cliente0_.codice as codice2_0_0_, cliente0_.indirizzo as indirizz3_0_0_, cliente0_.ragione_sociale as ragione_4_0_0_ from cliente cliente0_ where cliente0_.id=?
+2021-03-05 16:40:31.153 TRACE 17012 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2021-03-05 16:40:31.155 DEBUG 17012 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : delete from cliente where id=?
+2021-03-05 16:40:31.156 TRACE 17012 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2021-03-05 16:40:31.187 DEBUG 17012 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_
+2021-03-05 16:40:31.738 DEBUG 17012 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select cliente0_.id as id1_0_0_, cliente0_.codice as codice2_0_0_, cliente0_.indirizzo as indirizz3_0_0_, cliente0_.ragione_sociale as ragione_4_0_0_ from cliente cliente0_ where cliente0_.id=?
+2021-03-05 16:40:31.738 TRACE 17012 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [3]
+2021-03-05 16:40:31.740 DEBUG 17012 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : delete from cliente where id=?
+2021-03-05 16:40:31.741 TRACE 17012 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [3]
+2021-03-05 16:40:31.846 DEBUG 17012 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select cliente0_.id as id1_0_, cliente0_.codice as codice2_0_, cliente0_.indirizzo as indirizz3_0_, cliente0_.ragione_sociale as ragione_4_0_ from cliente cliente0_

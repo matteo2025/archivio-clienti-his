@@ -1,5 +1,6 @@
-export class Cliente{
+export class Cliente {
     codice: string;
     ragioneSociale = "";
     indirizzo = "";
+    id: bigint;
 }

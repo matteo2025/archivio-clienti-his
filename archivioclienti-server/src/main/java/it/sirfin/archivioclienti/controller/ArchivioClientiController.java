@@ -19,9 +19,9 @@ public class ArchivioClientiController {
     @Autowired
     ArchivioClientiService archivioClientiService;
     
-    @RequestMapping("/inserisci")
+    @RequestMapping("/inserisci-cliente")
     @ResponseBody
-    public ListaClientiDto inserisci(@RequestBody ClienteDto clientDto){
+    public ListaClientiDto inserisciCliente(@RequestBody ClienteDto clientDto){
         return archivioClientiService.inserisciContatto(clientDto.getCliente());
     }
     
@@ -31,10 +31,16 @@ public class ArchivioClientiController {
         return archivioClientiService.cancellaCliente(clientDto.getCliente());
     }
     
-    @RequestMapping("/ricerca")
+    @RequestMapping("/ricerca-clienti")
     @ResponseBody
-    public ListaClientiDto ricerca(@RequestBody CriterioRicercaDto c){
+    public ListaClientiDto ricercaClienti(@RequestBody CriterioRicercaDto c){
         return archivioClientiService.ricerca(c.getString());
+    }
+    
+    @RequestMapping("/aggiorna-lista")
+    @ResponseBody
+    public ListaClientiDto aggiornaListaClienti() {
+        return archivioClientiService.aggiorna();
     }
     
 }

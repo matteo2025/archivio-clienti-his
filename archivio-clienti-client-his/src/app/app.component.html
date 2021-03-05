@@ -3,15 +3,18 @@
 <input type="text" placeholder="indirizzo" [(ngModel)]="cliente.indirizzo">
 <button (click)="inserisci()">Inserisci</button>
 <br>
+<br>
 <input type="text" placeholder="ricerca" [(ngModel)]="criterioRicerca">
 <button (click)="search()">cerca</button>
 
-<table>
+<br><br>
+
+<table *ngIf="clienti.length > 0">
   <tr>
     <th>Codice</th>
     <th>ragione sociale</th>
     <th>indirizzo</th>
-    <th></th>
+    <th>Operazioni</th>
   </tr>
   <tr *ngFor="let c of clienti">
     <td>{{c.codice}}</td>

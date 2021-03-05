@@ -25,6 +25,7 @@ export class AppComponent {
     ox.subscribe(r =>
       this.clienti = r.clienti);
     this.cliente = new Cliente();
+    this.criterioRicerca = "";
   }
 
   elimina(c: Cliente) {

@@ -1,4 +1,3 @@
-
 package it.sirfin.archivioclienti.controller;
 
 import it.sirfin.archivioclienti.dto.ClienteDto;
@@ -15,38 +14,44 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin("*")
 public class ArchivioClientiController {
-    
+
     @Autowired
     ArchivioClientiService archivioClientiService;
-    
+
     @RequestMapping("/inserisci-cliente")
     @ResponseBody
-    public ListaClientiDto inserisciCliente(@RequestBody ClienteDto clientDto){
+    public ListaClientiDto inserisciCliente(@RequestBody ClienteDto clientDto) {
         return archivioClientiService.inserisciContatto(clientDto.getCliente());
     }
-    
+
     @RequestMapping("/elimina-cliente")
     @ResponseBody
-    public ListaClientiDto eliminaCliente(@RequestBody ClienteDto clientDto){
+    public ListaClientiDto eliminaCliente(@RequestBody ClienteDto clientDto) {
         return archivioClientiService.cancellaCliente(clientDto.getCliente());
     }
-    
+
     @RequestMapping("/ricerca-clienti")
     @ResponseBody
-    public ListaClientiDto ricercaClienti(@RequestBody CriterioRicercaDto c){
+    public ListaClientiDto ricercaClienti(@RequestBody CriterioRicercaDto c) {
         return archivioClientiService.ricerca(c.getString());
     }
-    
+
     @RequestMapping("/aggiorna-lista")
     @ResponseBody
     public ListaClientiDto aggiornaListaClienti() {
         return archivioClientiService.aggiorna();
     }
-    
+
     @RequestMapping("/seleziona-cliente")
     @ResponseBody
     public ClienteDto selezionaCliente(@RequestBody ClienteDto dto) {
         System.out.println("cliente selezionato: " + dto.getCliente());
         return archivioClientiService.selezionaCliente(dto.getCliente());
+    }
+
+    @RequestMapping("/modifica-cliente")
+    @ResponseBody
+    public ListaClientiDto modificaCliente(@RequestBody ClienteDto dto) {
+        return archivioClientiService.modificaCliente(dto.getCliente());
     }
 }

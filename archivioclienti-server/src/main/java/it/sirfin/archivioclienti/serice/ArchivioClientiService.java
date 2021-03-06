@@ -15,5 +15,7 @@ public interface ArchivioClientiService {
     
     ListaClientiDto ricerca(String criterioRicerca);
     
-    public ClienteDto selezionaCliente(Cliente c);
+    ClienteDto selezionaCliente(Cliente c);
+    
+    ListaClientiDto modificaCliente(Cliente c);
 }

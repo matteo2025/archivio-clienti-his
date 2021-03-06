@@ -53,4 +53,10 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
         return clienteSelezionatoDto;
     }
 
+    @Override
+    public ListaClientiDto modificaCliente(Cliente c) {
+        archivioClientiRepository.save(c);
+        return aggiorna();
+    }
+    
 }

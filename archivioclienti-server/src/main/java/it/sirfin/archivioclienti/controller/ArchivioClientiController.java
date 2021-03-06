@@ -43,4 +43,10 @@ public class ArchivioClientiController {
         return archivioClientiService.aggiorna();
     }
     
+    @RequestMapping("/seleziona-cliente")
+    @ResponseBody
+    public ClienteDto selezionaCliente(@RequestBody ClienteDto dto) {
+        System.out.println("cliente selezionato: " + dto.getCliente());
+        return archivioClientiService.selezionaCliente(dto.getCliente());
+    }
 }

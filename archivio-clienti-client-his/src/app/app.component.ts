@@ -76,10 +76,13 @@ export class AppComponent {
 
   }
 
-  seleziona() { }
-  /*
-    Da implementare
-  */
+  seleziona(c: Cliente) {
+    let clienteSelezionato = new ClienteDto();
+    clienteSelezionato.cliente = c;
+    this.http.post<ClienteDto>("http://localhost:8080/seleziona-cliente", clienteSelezionato)
+      .subscribe(c => this.cliente = c.cliente);
+  }
+
 }
 
 

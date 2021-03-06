@@ -45,4 +45,12 @@ public class ArchivioClientiServiceImpl implements ArchivioClientiService {
         return listaFiltDto;
     }
 
+    @Override
+    public ClienteDto selezionaCliente(Cliente c) {
+        ClienteDto clienteSelezionatoDto = new ClienteDto(
+                archivioClientiRepository.findById(c.getId()).get()
+        );
+        return clienteSelezionatoDto;
+    }
+
 }

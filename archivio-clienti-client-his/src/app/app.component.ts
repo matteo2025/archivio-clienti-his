@@ -115,6 +115,7 @@ export class AppComponent {
         this.clienti = lc.listaClienti;
         this.inizializzaVisButtConfAnn();
         this.stato = "";
+        this.cliente = new Cliente();
       });
   }
 
